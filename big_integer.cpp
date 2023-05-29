@@ -1,15 +1,6 @@
 ﻿#include "big_integer.h"
 
 
-big_integer& big_integer::operator=(const big_integer &other) {
-    return *this = big_integer(other);
-}
-
-big_integer& big_integer::operator=(big_integer &&other) noexcept {
-    std::swap(m_number, other.m_number);
-    return *this;
-}
-
 big_integer big_integer::operator+(const big_integer &other) {
     if (other.m_number == "0") {
         return big_integer(*this);
@@ -125,8 +116,4 @@ void big_integer::multiplication(big_integer &result, big_integer &temp_num) {
 
         result = result + temp;
     }
-}
-
-std::ostream& operator<<(std::ostream& os, const big_integer& obj) {
-    return os << obj.m_number;
 }
