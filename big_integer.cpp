@@ -58,6 +58,22 @@ big_integer big_integer::operator+(const big_integer &other) {
     return temp;
 }
 
+big_integer big_integer::operator*(const big_integer &other) {
+    if (other.m_number == "0") {
+        return big_integer();
+    }
+    else if (other.m_number == "1") {
+        return big_integer(*this);
+    }
+
+    big_integer result;
+    big_integer temp_num(other);
+
+    multiplication(result, temp_num);
+
+    return result;
+}
+
 big_integer big_integer::operator*(const size_t &num) {
     if (num == 0) {
         return big_integer();
@@ -69,6 +85,12 @@ big_integer big_integer::operator*(const size_t &num) {
     big_integer result;
     big_integer temp_num(num);
 
+    multiplication(result, temp_num);
+
+    return result;
+}
+
+void big_integer::multiplication(big_integer &result, big_integer &temp_num) {
     for (size_t i = 0; i < temp_num.m_number.size(); ++i) {
         big_integer temp(*this);
         int value = 0;
@@ -103,8 +125,6 @@ big_integer big_integer::operator*(const size_t &num) {
 
         result = result + temp;
     }
-
-    return result;
 }
 
 std::ostream& operator<<(std::ostream& os, const big_integer& obj) {

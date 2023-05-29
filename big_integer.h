@@ -14,10 +14,13 @@ public:
     big_integer& operator=(const big_integer &other);
     big_integer& operator=(big_integer &&other) noexcept;
     big_integer operator+(const big_integer &other);
+    big_integer operator*(const big_integer &other);
     big_integer operator*(const size_t &num);
 
 private:
     std::string m_number;
+
+    void multiplication(big_integer &result, big_integer &temp_num);
 
     friend std::ostream& operator<<(std::ostream& os, const big_integer& obj);
 };

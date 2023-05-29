@@ -39,7 +39,7 @@ int main() {
 
     {
         std::cout << "Умножение очень больших чисел:" << std::endl;
-        size_t num = 5643269487;
+        auto num = big_integer("5643269487");
         auto number = big_integer("6459134876312645915375645915243562819842157684951435975462712564565467216417897215674812546818645");
         std::cout << "\tЧисло 1: " << number << std::endl;
         std::cout << "\tЧисло 2: " << num << std::endl;
