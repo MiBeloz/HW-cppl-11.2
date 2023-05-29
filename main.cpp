@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 #include "big_integer.h"
 
@@ -7,20 +7,20 @@ int main() {
 #if WIN32
     setlocale(LC_ALL, "ru");
 #endif
-    std::cout << "\tÁîëüøèå ÷èñëà\n" << std::endl;
+    std::cout << "\tÐ‘Ð¾Ð»ÑŒÑˆÐ¸Ðµ Ñ‡Ð¸ÑÐ»Ð°\n" << std::endl;
 
     {
-        std::cout << "Ñóììà ÷èñåë:" << std::endl;
+        std::cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ñ‡Ð¸ÑÐµÐ»:" << std::endl;
         auto number1 = big_integer("114575");
         auto number2 = big_integer("78524");
-        std::cout << "\t×èñëî 1: " << number1 << std::endl;
-        std::cout << "\t×èñëî 2: " << number2 << std::endl;
-        std::cout << "\tÏîëó÷åííàÿ ñóììà:  " << number1 + number2 << std::endl;
-        std::cout << "\tÊîíòðîëüíàÿ ñóììà: " << 114575 + 78524 << std::endl << std::endl;
+        std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 1: " << number1 << std::endl;
+        std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 2: " << number2 << std::endl;
+        std::cout << "\tÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ð°Ñ ÑÑƒÐ¼Ð¼Ð°:  " << number1 + number2 << std::endl;
+        std::cout << "\tÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½Ð°Ñ ÑÑƒÐ¼Ð¼Ð°: " << 114575 + 78524 << std::endl << std::endl;
     }
 
     {
-        std::cout << "Óìíîæåíèå íà ÷èñëî:" << std::endl;
+        std::cout << "Ð£Ð¼Ð½Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð½Ð° Ñ‡Ð¸ÑÐ»Ð¾:" << std::endl;
         size_t num_start = 0;
         size_t num_end = 10000;
         size_t step = 2026;
@@ -30,22 +30,22 @@ int main() {
 
         for (size_t i = num_start; i < num_end; i += step, num += 862) {
             auto number = big_integer(num);
-            std::cout << "\t×èñëî 1: " << number << std::endl;
-            std::cout << "\t×èñëî 2: " << i << std::endl;
-            std::cout << "\tÏîëó÷åííîå ÷èñëî:  " << number * i << std::endl;
-            std::cout << "\tÊîíòðîëüíîå ÷èñëî: " << num * i << std::endl << std::endl;
+            std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 1: " << number << std::endl;
+            std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 2: " << i << std::endl;
+            std::cout << "\tÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾:  " << number * i << std::endl;
+            std::cout << "\tÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << num * i << std::endl << std::endl;
         }
     }
 
     {
-        std::cout << "Óìíîæåíèå î÷åíü áîëüøèõ ÷èñåë:" << std::endl;
+        std::cout << "Ð£Ð¼Ð½Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¾Ñ‡ÐµÐ½ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ñ… Ñ‡Ð¸ÑÐµÐ»:" << std::endl;
         size_t num = 5643269487;
         auto number = big_integer("6459134876312645915375645915243562819842157684951435975462712564565467216417897215674812546818645");
-        std::cout << "\t×èñëî 1: " << number << std::endl;
-        std::cout << "\t×èñëî 2: " << num << std::endl;
-        std::cout << "\tÏîëó÷åííîå ÷èñëî:  " << number * num << std::endl;
-        // Êîíòðîëüíîå ÷èñëî - ïîñ÷èòàíî â èíòåðíåòå :)
-        std::cout << "\tÊîíòðîëüíîå ÷èñëî: " << "36450638759912673766474566736410186234382926619728997717162806521863818556309944797919927759906418251185115" << std::endl;
+        std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 1: " << number << std::endl;
+        std::cout << "\tÐ§Ð¸ÑÐ»Ð¾ 2: " << num << std::endl;
+        std::cout << "\tÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾:  " << number * num << std::endl;
+        // ÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ - Ð¿Ð¾ÑÑ‡Ð¸Ñ‚Ð°Ð½Ð¾ Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚Ðµ :)
+        std::cout << "\tÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << "36450638759912673766474566736410186234382926619728997717162806521863818556309944797919927759906418251185115" << std::endl;
     }
 
     std::cin.get();

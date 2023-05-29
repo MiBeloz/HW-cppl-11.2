@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
+﻿CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 
 project(big_integer_project)
 
